@@ -67,7 +67,7 @@ public class CreateAccount {
        Select dropdown4 = new Select(sourceELement4);
        dropdown4.selectByIndex(6);
        
-      //State/Province
+      //State Province
        WebElement sourceELement5 = driver.findElement(By.id("generalStateProvinceGeoId"));
        
        Select dropdown5 = new Select(sourceELement5);

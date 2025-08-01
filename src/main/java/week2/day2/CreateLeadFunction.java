@@ -26,7 +26,7 @@ public class CreateLeadFunction {
         // Click the Login button
         driver.findElement(By.className("decorativeSubmit")).click();
 
-        // Clcik on the CRMSFA link
+        // Click on the CRMSFA link
         driver.findElement(By.partialLinkText("CRM")).click();
 
         // Click on the Leads link
