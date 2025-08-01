@@ -38,30 +38,36 @@ public class CreateLeadFunction {
         Thread.sleep(4000);
 
         // Enter company name
-        driver.findElement(By.id("createLeadForm_companyName")).sendKeys("TestLeaf");
+        driver.findElement(By.id("createLeadForm_companyName")).sendKeys("TestLeaf1");
 
         // Enter first name
-        driver.findElement(By.id("createLeadForm_firstName")).sendKeys("Vineeth");
+        driver.findElement(By.id("createLeadForm_firstName")).sendKeys("Punarvi1");
 
         // Enter the last name
-        driver.findElement(By.id("createLeadForm_lastName")).sendKeys("Rajendran");
+        driver.findElement(By.id("createLeadForm_lastName")).sendKeys("Karanam1");
+        
+        //Enter Title
+       driver.findElement(By.id("createLeadForm_generalProfTitle")).sendKeys("LearnAutomation");
+        
+       String inputTitle = "LearnAutomation";
+       System.out.println(inputTitle);
+       
+    // Click on the Create lead button
+       driver.findElement(By.name("submitButton")).click();
 
-        // Step1: Find the dropdown element
-        WebElement sourceElement = driver.findElement(By.id("createLeadForm_dataSourceId"));
 
-        // Step2: Select-Create an Object
-        Select dropdown = new Select(sourceElement);
+       String outputTitle = driver.findElement(By.id("viewLead_generalProfTitle_sp")).getText();
+       
+       System.out.println(outputTitle);
+       if(outputTitle.contains(inputTitle)) {
+    	   System.out.println("Title is displayed correctly");
+       }
+       else {
+    	   System.out.println("Title is not displayed correctly");
+       }
+        
+       driver.close();
 
-        // Step3: Use the method to Select - 3 Methods
-        // dropdown.selectByIndex(4);
-        // dropdown.selectByVisibleText("Conference");
-        dropdown.selectByValue("LEAD_DIRECTMAIL");
-        WebElement element1 = driver.findElement(By.id("createLeadForm_industryEnumId"));
-
-        Select dropdown2 = new Select(element1);
-        dropdown2.selectByVisibleText("Finance");
-
-        // Click on the Create lead button
-        driver.findElement(By.name("submitButton")).click();
+        
     }
 }
